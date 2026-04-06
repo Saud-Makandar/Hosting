@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital 2 - Emergency System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="waiting-container" id="waiting-screen">
+        <div class="waiting-content">
+            <div class="loader"></div>
+            <h1>🏥 HOSPITAL 2</h1>
+            <h2>Emergency Alert System</h2>
+            <p class="status-line">Status: <span id="connection-status">Connecting...</span></p>
+            <p class="info-line">Waiting for emergency alerts...</p>
+            <p class="info-line">This hospital will only receive alerts when selected as the nearest facility.</p>
+            <div class="pulse-indicator"></div>
+        </div>
+    </div>
+
+    <div class="alert-container" id="alert-screen">
+        <div class="alert-content">
+            <div class="alert-icon">🚨</div>
+            <h1 class="alert-title">EMERGENCY ALERT</h1>
+            
+            <div class="alert-box">
+                <h2>🚨 Accident Alert Assigned to You</h2>
+                <p>An accident has been detected and your hospital has been selected as the nearest facility.</p>
+                <p><strong>Action Required:</strong> Prepare emergency response team</p>
+                <p class="alert-time">Alert Time: <span id="alert-timestamp">--</span></p>
+            </div>
+            
+            <div class="alert-footer">
+                <p>⚡ IMMEDIATE RESPONSE REQUIRED ⚡</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Socket.IO from CDN -->
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+    <script>
+        window.HOSPITAL_ID = 'hospital2';
+        window.HOSPITAL_NAME = 'Hospital 2';
+    </script>
+    <script src="hospital.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Driver - Accident Detection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-content">
+        <h1>🚗 Car Driver Dashboard</h1>
+        <div class="info-box">
+            <p>System is monitoring for accidents</p>
+            <p>Status: <span id="connection-status">Connecting...</span></p>
+        </div>
+        
+        <div class="timer-display">
+            <h3>System Status</h3>
+            <p id="status-text">Monitoring...</p>
+            <p id="timer-info" style="font-size: 1em; color: #666; margin-top: 10px;"></p>
+        </div>
+    </div>
+
+    <!-- Emergency Question Popup -->
+    <div id="question-popup" class="popup-overlay" style="display: none;">
+        <div class="popup-box">
+            <div class="popup-icon">⚠️</div>
+            <h2>Accident Detected!</h2>
+            <p class="popup-question">Do you need help?</p>
+            
+            <div class="timer-box">
+                <p>Time remaining: <span id="countdown">60</span> seconds</p>
+            </div>
+            
+            <div class="button-container">
+                <button id="yes-button" class="btn btn-yes">YES - I NEED HELP</button>
+                <button id="no-button" class="btn btn-no">NO - I'M FINE</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency Confirmed Screen -->
+    <div id="emergency-confirmed" class="emergency-screen">
+        <div class="emergency-box">
+            <div class="emergency-icon">🚨</div>
+            <h2>HELP IS ON THE WAY!</h2>
+            <p id="hospital-info">Notifying nearest hospital...</p>
+            <button id="close-emergency" class="btn btn-close">Close</button>
+        </div>
+    </div>
+
+    <!-- Load Socket.IO from CDN -->
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+    <script src="carDriver.js"></script>
+</body>
+</html>
